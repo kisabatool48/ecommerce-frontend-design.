@@ -1,0 +1,50 @@
+<main class="container">
+    <section class="product-detail-view">
+        <div class="product-gallery">
+            <div class="main-img">
+                <img src="https://via.placeholder.com/400" id="current-img" alt="Product">
+            </div>
+            <div class="thumb-list">
+                <img src="https://via.placeholder.com/400" onclick="changeImage(this.src)">
+                <img src="https://via.placeholder.com/400/222" onclick="changeImage(this.src)">
+                <img src="https://via.placeholder.com/400/444" onclick="changeImage(this.src)">
+            </div>
+        </div>
+
+        <div class="product-content">
+            <p class="stock-status">In Stock</p>
+            <h1>Mens Summer T-Shirt Luxury</h1>
+            <div class="rating">⭐⭐⭐⭐ <span>(32 reviews)</span></div>
+            
+            <div class="price-box">
+                <span class="current-price">$45.00</span>
+                <span class="old-price">$60.00</span>
+            </div>
+
+            <p class="description">
+                Modern high-quality t-shirt made with premium cotton. Perfect for summer wear and casual outings.
+            </p>
+
+            <div class="options">
+                <label>Select Size:</label>
+                <select id="size-dropdown">
+                    <option>Small</option>
+                    <option>Medium</option>
+                    <option>Large</option>
+                    <option>XL</option>
+                </select>
+            </div>
+
+            <div class="actions">
+                <button class="btn-blue" onclick="addToCart()">Add to Cart</button>
+                <button class="btn-white"><i class="far fa-heart"></i> Save</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-products">
+        <h3>Related Products</h3>
+        <div class="product-grid">
+             </div>
+    </section>
+</main>

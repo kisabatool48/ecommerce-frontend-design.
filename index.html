@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="top-nav">
+            <div class="logo">
+                <img src="assets/logo-symbol.png" alt="Brand Logo"> <span>Brand</span>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" placeholder="Search">
+                <select>
+                    <option>All category</option>
+                </select>
+                <button class="search-btn">Search</button>
+            </div>
+
+            <div class="nav-icons">
+                <div class="icon-item"><i class="fas fa-user"></i><span>Profile</span></div>
+                <div class="icon-item"><i class="fas fa-comment"></i><span>Message</span></div>
+                <div class="icon-item"><i class="fas fa-heart"></i><span>Orders</span></div>
+                <div class="icon-item" onclick="viewCart()" style="cursor: pointer;"><i class="fas fa-shopping-cart"></i><span>My cart (0)</span></div>
+            </div>
+        </nav>
+
+        <nav class="bottom-nav">
+            <ul>
+                <li id="all-categories-btn"><i class="fas fa-bars"></i> All categories</li>
+                <li>Hot offers</li>
+                <li>Gift boxes</li>
+                <li>Projects</li>
+                <li>Menu item</li>
+                <li>Help <i class="fas fa-chevron-down"></i></li>
+            </ul>
+            <div class="lang-currency">
+                <span>English, USD <i class="fas fa-chevron-down"></i></span>
+                <span>Ship to <img src="assets/iconflag.png" alt="flag" width="20"> <i class="fas fa-chevron-down"></i></span>
+            </div>
+        </nav>
+    </header>
+    
+
+<div id="home-content">
+<main class="container">
+    <section class="hero-section">
+        <aside class="category-sidebar">
+            <ul>
+                <li class="active" onclick="selectCategory(this, 'Automobiles')">Automobiles</li>
+                <li onclick="selectCategory(this, 'Clothes and wear')">Clothes and wear</li>
+                <li onclick="selectCategory(this, 'Home interiors')">Home interiors</li>
+                <li onclick="selectCategory(this, 'Computer and tech')">Computer and tech</li>
+                <li onclick="selectCategory(this, 'Tools, equipments')">Tools, equipments</li>
+                <li onclick="selectCategory(this, 'Sports and outdoor')">Sports and outdoor</li>
+                <li onclick="selectCategory(this, 'Animal and pets')">Animal and pets</li>
+                <li onclick="selectCategory(this, 'Machinery tools')">Machinery tools</li>
+                <li id="more-categories-btn" style="cursor: pointer; color: #0d6efd; font-weight: bold;">More category</li>
+            </ul>
+        </aside>
+
+        <div class="main-banner">
+            <div class="banner-content">
+                <img src="assets/banner.png" alt="Banner">
+                <h3>Latest trending</h3>
+                <h1>Electronic items</h1>
+                <button class="btn-light">Source now</button>
+            </div>
+        </div>
+
+        <div class="user-actions">
+            <div class="login-card">
+                <div class="user-info">
+                    <div class="avatar"></div>
+                    <span>Hi, user <br> let's get started</span>
+                </div>
+                <button class="btn-blue">Join now</button>
+                <button class="btn-white">Log in</button>
+            </div>
+            <div class="promo-card orange">Get US $10 off with a new supplier</div>
+            <div class="promo-card teal">Send quotes with supplier preferences</div>
+        </div>
+    </section>
+
+    <!-- Deals and Offers Section -->
+    <section style="background: #fff; padding: 0; border-radius: 8px; margin-bottom: 30px; border: 1px solid #e3e8ee; margin-top: 30px;">
+        <div style="display: flex; gap: 20px; height: 235px;">
+            <!-- Left: Deals Box + Timer -->
+            <div class="deals-left">
+                <div class="deals-title">
+                    <h3>Deals and<br>offers</h3>
+                    <p class="deals-sub">Hygiene equipments</p>
+                </div>
+                <div class="deals-timer">
+                    <div class="timer-box">
+                        <div class="timer-num">04</div>
+                        <div class="timer-label">Days</div>
+                    </div>
+                    <div class="timer-box">
+                        <div class="timer-num">13</div>
+                        <div class="timer-label">Hour</div>
+                    </div>
+                    <div class="timer-box">
+                        <div class="timer-num">34</div>
+                        <div class="timer-label">Min</div>
+                    </div>
+                    <div class="timer-box">
+                        <div class="timer-num">56</div>
+                        <div class="timer-label">Sec</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: 4 Product Cards -->
+            <div style="display: flex; gap: 15px; flex: 1; padding: 15px 20px; width: 895px;">
+                <div style="flex: 1; height: 235px; padding: 12px; background: #f7f7f7; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <div style="width: 100%; height: 140px; background: #fff; border-radius: 4px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center;">
+                        <img src="assets/watches.png" alt="Smart Watches" style="width: 80%; height: 80%; object-fit: contain;">
+                    </div>
+                    <p style="font-weight: bold; font-size: 16px; margin: 5px 0; color: #000;">$199</p>
+                    <p style="color: #8b96a5; font-size: 12px; margin: 3px 0; text-align: center;">Smart Watches</p>
+                    <span style="color: #fa3434; font-weight: bold; font-size: 12px;">-35%</span>
+                </div>
+
+                <div style="flex: 1; height: 235px; padding: 12px; background: #f7f7f7; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <div style="width: 100%; height: 140px; background: #fff; border-radius: 4px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center;">
+                        <img src="assets/laptop.png" alt="Laptops" style="width: 80%; height: 80%; object-fit: contain;">
+                    </div>
+                    <p style="font-weight: bold; font-size: 16px; margin: 5px 0; color: #000;">$899</p>
+                    <p style="color: #8b96a5; font-size: 12px; margin: 3px 0; text-align: center;">Laptops</p>
+                    <span style="color: #fa3434; font-weight: bold; font-size: 12px;">-28%</span>
+                </div>
+
+                <div style="flex: 1; height: 235px; padding: 12px; background: #f7f7f7; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <div style="width: 100%; height: 140px; background: #fff; border-radius: 4px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center;">
+                        <img src="assets/gopro.png" alt="GoPro Camera" style="width: 80%; height: 80%; object-fit: contain;">
+                    </div>
+                    <p style="font-weight: bold; font-size: 16px; margin: 5px 0; color: #000;">$499</p>
+                    <p style="color: #8b96a5; font-size: 12px; margin: 3px 0; text-align: center;">GoPro Camera</p>
+                    <span style="color: #fa3434; font-weight: bold; font-size: 12px;">-22%</span>
+                </div>
+
+                <div style="flex: 1; height: 235px; padding: 12px; background: #f7f7f7; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <div style="width: 100%; height: 140px; background: #fff; border-radius: 4px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center;">
+                        <img src="assets/smatheadphones.png" alt="Headphones" style="width: 80%; height: 80%; object-fit: contain;">
+                    </div>
+                    <p style="font-weight: bold; font-size: 16px; margin: 5px 0; color: #000;">$149</p>
+                    <p style="color: #8b96a5; font-size: 12px; margin: 3px 0; text-align: center;">Headphones</p>
+                    <span style="color: #fa3434; font-weight: bold; font-size: 12px;">-40%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-section">
+        <h2 class="section-title">Recommended items</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="assets/shirt.png" alt="product">
+                </div>
+                <div class="product-info">
+                    <p class="price">$10.30</p>
+                    <p class="desc">T-shirts with multiple colors for men</p>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/jeans.png" alt="product"></div>
+                <div class="product-info">
+                    <p class="price">$12.50</p>
+                    <p class="desc">Jeans shorts for men blue color</p>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/brownjaket.png" alt="Winter Jacket"></div>
+                <div class="product-info">
+                    <p class="price">$65.99</p>
+                    <p class="desc">Warm and stylish winter jacket for cold weather</p>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/wallet.png" alt="Wallet"></div>
+                <div class="product-info">
+                    <p class="price">$89.99</p>
+                    <p class="desc">Professional wallet</p>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/wintercoat.png" alt="Winter Coat"></div>
+                <div class="product-info">
+                    <p class="price">$399.99</p>
+                    <p class="desc">Cool Blue Colored winter coat</p>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/5.png" alt="Backpack"></div>
+                <div class="product-info">
+                    <p class="price">$49.99</p>
+                    <p class="desc">Durable and spacious travel backpack</p>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/kettle.png" alt="Coffee Maker"></div>
+                <div class="product-info">
+                    <p class="price">$59.99</p>
+                    <p class="desc">Automatic coffee maker with timer</p>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/3.png" alt="Desk Lamp"></div>
+                <div class="product-info">
+                    <p class="price">$35.99</p>
+                    <p class="desc">LED desk lamp with adjustable brightness</p>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/headphone.png" alt="Headphones"></div>
+                <div class="product-info">
+                    <p class="price">$75.99</p>
+                    <p class="desc">Premium noise-cancelling headphones</p>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="assets/5.png" alt="Sports Bag"></div>
+                <div class="product-info">
+                    <p class="price">$45.99</p>
+                    <p class="desc">Gym bag with multiple compartments</p>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            </div>
+    </section>
+
+    </main>
+</div>
+    <div id="listing-content" style="display: none;">
+        <main class="container listing-page">
+            <div style="margin-bottom: 20px;">
+                <button class="btn-back" onclick="goBackHome()" style="background: #0d6efd; color: white; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px;">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </button>
+            </div>
+            
+            <aside class="sidebar">
+                <!-- Category Filter -->
+                <div class="filter-group">
+                    <h3 class="filter-title">
+                        <i class="fas fa-list"></i> Category
+                        <span class="toggle-filter" onclick="toggleFilter(this)"><i class="fas fa-chevron-down"></i></span>
+                    </h3>
+                    <ul class="filter-list" style="list-style: none;">
+                        <li><label><input type="checkbox" checked> All Products</label></li>
+                        <li><label><input type="checkbox"> Computer and tech</label></li>
+                        <li><label><input type="checkbox"> Clothes</label></li>
+                        <li><label><input type="checkbox"> Mobile Phones</label></li>
+                        <li><label><input type="checkbox"> Laptops</label></li>
+                        <li><label><input type="checkbox"> Tablets</label></li>
+                        <li><label><input type="checkbox"> Accessories</label></li>
+                    </ul>
+                </div>
+
+                <hr style="margin: 20px 0; border: none; border-top: 1px solid #e3e8ee;">
+
+                <!-- Price Range Filter -->
+                <div class="filter-group">
+                    <h3 class="filter-title">
+                        <i class="fas fa-dollar-sign"></i> Price Range
+                        <span class="toggle-filter" onclick="toggleFilter(this)"><i class="fas fa-chevron-down"></i></span>
+                    </h3>
+                    <div class="price-inputs">
+                        <input type="number" placeholder="Min" class="price-min" min="0" value="0">
+                        <span>-</span>
+                        <input type="number" placeholder="Max" class="price-max" min="0" value="1000">
+                    </div>
+                    <input type="range" min="0" max="1000" class="price-range" style="width: 100%; margin-top: 10px;">
+                    <span id="price-value" style="display: block; color: #0d6efd; font-size: 13px; font-weight: 600; margin-top: 10px;">$0 - $1000</span>
+                </div>
+
+                <hr style="margin: 20px 0; border: none; border-top: 1px solid #e3e8ee;">
+
+                <!-- Condition Filter -->
+                <div class="filter-group">
+                    <h3 class="filter-title">
+                        <i class="fas fa-info-circle"></i> Condition
+                        <span class="toggle-filter" onclick="toggleFilter(this)"><i class="fas fa-chevron-down"></i></span>
+                    </h3>
+                    <ul class="filter-list" style="list-style: none;">
+                        <li><label><input type="checkbox"> New</label></li>
+                        <li><label><input type="checkbox"> Used</label></li>
+                        <li><label><input type="checkbox"> Refurbished</label></li>
+                    </ul>
+                </div>
+
+                <hr style="margin: 20px 0; border: none; border-top: 1px solid #e3e8ee;">
+
+                <!-- Ratings Filter -->
+                <div class="filter-group">
+                    <h3 class="filter-title">
+                        <i class="fas fa-star"></i> Ratings
+                        <span class="toggle-filter" onclick="toggleFilter(this)"><i class="fas fa-chevron-down"></i></span>
+                    </h3>
+                    <ul class="filter-list" style="list-style: none;">
+                        <li><label><input type="checkbox">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5 Stars
+                        </label></li>
+                        <li><label><input type="checkbox">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4 & up
+                        </label></li>
+                        <li><label><input type="checkbox">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 3 & up
+                        </label></li>
+                        <li><label><input type="checkbox">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i> 2 & up
+                        </label></li>
+                    </ul>
+                </div>
+
+                <hr style="margin: 20px 0; border: none; border-top: 1px solid #e3e8ee;">
+
+                <!-- Apply Button -->
+                <button class="btn-apply-filter">Apply Filters</button>
+            </aside>
+
+            <section class="products-view">
+                <!-- Applied Filters Display -->
+                <div class="applied-filters-section" id="appliedFiltersSection" style="display: none;">
+                    <div class="applied-filters-header">
+                        <span id="resultsCount">0 results</span>
+                        <div>
+                            <button class="btn-view-toggle" title="List View"><i class="fas fa-list"></i></button>
+                            <button class="btn-view-toggle" title="Grid View"><i class="fas fa-th"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-chips">
+                        <div id="activeFiltersContainer"></div>
+                        <button class="btn-clear-all" onclick="clearAllFilters()" style="display: none;">Clear all filters</button>
+                    </div>
+                </div>
+
+                <h2 style="margin-bottom: 20px;" id="productsTitle">All Products</h2>
+                <div class="product-list" id="product-container">
+                    <div class="product-list-item" data-category="mobile phones">
+                        <div class="product-list-img">
+                            <img src="assets/phone.png" alt="Phone">
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-list-header">
+                                <h3>Smartphone - Latest Model</h3>
+                                <span class="product-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    (328 reviews)
+                                </span>
+                            </div>
+                            <p class="product-list-desc">High-quality smartphone with advanced features and latest technology. Perfect for professionals and everyday use.</p>
+                            <div class="product-list-footer">
+                                <span class="product-list-price">$299</span>
+                                <span class="shipping-info"><i class="fas fa-shipping-fast"></i> Free Shipping</span>
+                                <button class="btn-add-cart" onclick="addToCart()">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-list-actions">
+                            <button class="btn-compare" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+                            <button class="btn-wishlist" title="Add to Wishlist"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="product-list-item" data-category="clothes" onclick="viewProductDetail('Premium T-Shirt', '$25.99', 'Clothes', '328 reviews')">
+                        <div class="product-list-img">
+                            <img src="assets/shirt.png" alt="T-Shirt">
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-list-header">
+                                <h3>Premium T-Shirt</h3>
+                                <span class="product-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    (328 reviews)
+                                </span>
+                            </div>
+                            <p class="product-list-desc">High-quality premium t-shirt made from 100% organic cotton. Perfect for casual wear with excellent comfort.</p>
+                            <div class="product-list-footer">
+                                <span class="product-list-price">$25.99</span>
+                                <span class="shipping-info"><i class="fas fa-shipping-fast"></i> Free Shipping</span>
+                                <button class="btn-add-cart" onclick="addToCart()">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-list-actions">
+                            <button class="btn-compare" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+                            <button class="btn-wishlist" title="Add to Wishlist"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="product-list-item" data-category="clothes">
+                        <div class="product-list-img">
+                            <img src="assets/shirt.png" alt="Blue T-Shirt">
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-list-header">
+                                <h3>Blue Casual T-Shirt</h3>
+                                <span class="product-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    (145 reviews)
+                                </span>
+                            </div>
+                            <p class="product-list-desc">Comfortable and stylish t-shirt made from premium quality cotton. Available in multiple colors and sizes.</p>
+                            <div class="product-list-footer">
+                                <span class="product-list-price">$22.99</span>
+                                <span class="shipping-info"><i class="fas fa-shipping-fast"></i> Free Shipping</span>
+                                <button class="btn-add-cart" onclick="addToCart()">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-list-actions">
+                            <button class="btn-compare" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+                            <button class="btn-wishlist" title="Add to Wishlist"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="product-list-item" data-category="clothes">
+                        <div class="product-list-img">
+                            <img src="assets/polo_shirt.png" alt="Polo Shirt">
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-list-header">
+                                <h3>Cotton Polo Shirt</h3>
+                                <span class="product-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    (189 reviews)
+                                </span>
+                            </div>
+                            <p class="product-list-desc">Classic polo shirt in premium cotton blend. Perfect for both casual and semi-formal occasions. Breathable and durable.</p>
+                            <div class="product-list-footer">
+                                <span class="product-list-price">$28.99</span>
+                                <span class="shipping-info"><i class="fas fa-shipping-fast"></i> Free Shipping</span>
+                                <button class="btn-add-cart" onclick="addToCart()">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-list-actions">
+                            <button class="btn-compare" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+                            <button class="btn-wishlist" title="Add to Wishlist"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="product-list-item" data-category="computer and tech">
+                        <div class="product-list-img">
+                            <img src="assets/laptop.png" alt="Tablet">
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-list-header">
+                                <h3>Tablet Pro Max</h3>
+                                <span class="product-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    (256 reviews)
+                                </span>
+                            </div>
+                            <p class="product-list-desc">Powerful tablet with stunning display and fast processor. Ideal for work, entertainment, and creativity.</p>
+                            <div class="product-list-footer">
+                                <span class="product-list-price">$450</span>
+                                <span class="shipping-info"><i class="fas fa-shipping-fast"></i> Free Shipping</span>
+                                <button class="btn-add-cart" onclick="addToCart()">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-list-actions">
+                            <button class="btn-compare" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+                            <button class="btn-wishlist" title="Add to Wishlist"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="product-list-item" data-category="accessories">
+                        <div class="product-list-img">
+                            <img src="assets/headphone.png" alt="Earbuds">
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-list-header">
+                                <h3>Wireless Earbuds</h3>
+                                <span class="product-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    (512 reviews)
+                                </span>
+                            </div>
+                            <p class="product-list-desc">Premium wireless earbuds with noise cancellation and excellent sound quality. Perfect for music lovers.</p>
+                            <div class="product-list-footer">
+                                <span class="product-list-price">$85</span>
+                                <span class="shipping-info"><i class="fas fa-shipping-fast"></i> Free Shipping</span>
+                                <button class="btn-add-cart" onclick="addToCart()">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-list-actions">
+                            <button class="btn-compare" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+                            <button class="btn-wishlist" title="Add to Wishlist"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="product-list-item" data-category="home">
+                        <div class="product-list-img">
+                            <img src="https://via.placeholder.com/120x120" alt="Lamp">
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-list-header">
+                                <h3>LED Smart Lamp</h3>
+                                <span class="product-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    (189 reviews)
+                                </span>
+                            </div>
+                            <p class="product-list-desc">Smart LED lamp with adjustable brightness and color. Control with your smartphone for perfect ambiance.</p>
+                            <div class="product-list-footer">
+                                <span class="product-list-price">$45</span>
+                                <span class="shipping-info"><i class="fas fa-shipping-fast"></i> Free Shipping</span>
+                                <button class="btn-add-cart" onclick="addToCart()">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-list-actions">
+                            <button class="btn-compare" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+                            <button class="btn-wishlist" title="Add to Wishlist"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="product-list-item" data-category="sports">
+                        <div class="product-list-img">
+                            <img src="assets/watches.png" alt="Watch">
+                        </div>
+                        <div class="product-list-content">
+                            <div class="product-list-header">
+                                <h3>Sports Smart Watch</h3>
+                                <span class="product-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    (423 reviews)
+                                </span>
+                            </div>
+                            <p class="product-list-desc">Advanced sports watch with fitness tracking and health monitoring. Water-resistant and durable design.</p>
+                            <div class="product-list-footer">
+                                <span class="product-list-price">$200</span>
+                                <span class="shipping-info"><i class="fas fa-shipping-fast"></i> Free Shipping</span>
+                                <button class="btn-add-cart" onclick="addToCart()">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="product-list-actions">
+                            <button class="btn-compare" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+                            <button class="btn-wishlist" title="Add to Wishlist"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <section class="container services-section">
+    <h3>Our extra services</h3>
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="service-img" style="background-image: url('assets/boxes.png');"></div>
+            <div class="service-icon"><i class="fas fa-search"></i></div>
+            <p>Source from <br> Industry Hubs</p>
+        </div>
+        <div class="service-card">
+            <div class="service-img" style="background-image: url('assets/Mask group (1).png');"></div>
+            <div class="service-icon"><i class="fas fa-box"></i></div>
+            <p>Customize Your <br> Products</p>
+        </div>
+        <div class="service-card">
+            <div class="service-img" style="background-image: url('assets/Mask group (2).png');"></div>
+            <div class="service-icon"><i class="fas fa-plane"></i></div>
+            <p>Fast, reliable shipping <br> by ocean or air</p>
+        </div>
+        <div class="service-card">
+            <div class="service-img" style="background-image: url('assets/Mask group (3).png');"></div>
+            <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+            <p>Product monitoring <br> and inspection</p>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCT DETAIL PAGE -->
+<div id="product-detail-page" style="display: none;">
+    <div class="container">
+        <nav style="margin: 20px 0; font-size: 13px; color: #8b96a5;">
+            <span onclick="goBackHome()" style="cursor: pointer; color: #0d6efd;">Home</span> / 
+            <span id="breadcrumb-category">Category</span> / 
+            <span id="breadcrumb-product">Product</span>
+        </nav>
+
+        <div class="product-detail-container">
+            <!-- Left: Product Images -->
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainProductImage" src="assets/polo_shirt.png" alt="Product">
+                </div>
+                <div class="thumbnail-gallery">
+                    <img src="https://via.placeholder.com/80x80" onclick="changeMainImage(this.src)" class="thumbnail active">
+                    <img src="https://via.placeholder.com/80x80" onclick="changeMainImage(this.src)" class="thumbnail">
+                    <img src="https://via.placeholder.com/80x80" onclick="changeMainImage(this.src)" class="thumbnail">
+                    <img src="https://via.placeholder.com/80x80" onclick="changeMainImage(this.src)" class="thumbnail">
+                </div>
+                <div class="product-actions-icons">
+                    <button class="icon-btn" title="Share"><i class="fas fa-share-alt"></i></button>
+                    <button class="icon-btn" title="Compare"><i class="fas fa-exchange-alt"></i></button>
+                    <button class="icon-btn" title="Wishlist"><i class="fas fa-heart"></i></button>
+                    <button class="icon-btn" title="Report"><i class="fas fa-flag"></i></button>
+                </div>
+            </div>
+
+            <!-- Middle: Product Details -->
+            <div class="product-details">
+                <h1 id="productTitle">Premium T-Shirt</h1>
+                <div class="product-rating-detail">
+                    <span class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </span>
+                    <span class="review-count">(4.5) <span id="reviewCount">328 reviews</span></span>
+                </div>
+
+                <div class="price-section">
+                    <span class="current-price" id="productPrice">$25.99</span>
+                    <span class="old-price">$35.99</span>
+                    <span class="discount-badge">-28%</span>
+                </div>
+
+                <div class="shipping-info-detail">
+                    <p><i class="fas fa-shipping-fast"></i> <strong>Free Shipping</strong></p>
+                    <p><i class="fas fa-check-circle"></i> In Stock: <strong id="stock">15 items</strong></p>
+                </div>
+
+                <hr>
+
+                <!-- Product Options -->
+                <div class="product-options">
+                    <div class="option-group">
+                        <label><strong>Color:</strong></label>
+                        <div class="color-options">
+                            <span class="color-btn" style="background-color: #333;" title="Black" onclick="selectColor(this)"></span>
+                            <span class="color-btn" style="background-color: #c0c0c0;" title="Silver" onclick="selectColor(this)"></span>
+                            <span class="color-btn" style="background-color: #0066cc;" title="Blue" onclick="selectColor(this)"></span>
+                            <span class="color-btn" style="background-color: #ff4444;" title="Red" onclick="selectColor(this)"></span>
+                            <span class="color-btn" style="background-color: #ffffff; border: 1px solid #ccc;" title="White" onclick="selectColor(this)"></span>
+                        </div>
+                    </div>
+
+                    <div class="option-group">
+                        <label><strong>Size:</strong></label>
+                        <select id="sizeSelect" class="size-select">
+                            <option>Select Size</option>
+                            <option>XS</option>
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                            <option>XL</option>
+                            <option>XXL</option>
+                        </select>
+                    </div>
+
+                    <div class="option-group">
+                        <label><strong>Quantity:</strong></label>
+                        <div class="quantity-control">
+                            <button onclick="decreaseQty()">-</button>
+                            <input type="number" id="quantityInput" value="1" min="1">
+                            <button onclick="increaseQty()">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="btn-add-to-cart-large" onclick="addToCart()"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    <button class="btn-wishlist-large"><i class="fas fa-heart"></i> Add to Wishlist</button>
+                </div>
+
+                <hr>
+
+                <!-- Product Description -->
+                <div class="product-description">
+                    <h3>Product Details</h3>
+                    <p id="productDesc">High-quality premium t-shirt made from 100% organic cotton. Perfect for casual wear with excellent comfort and durability. Available in multiple colors and sizes to suit every preference.</p>
+                    
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>100% Organic Cotton</li>
+                        <li>Comfortable & Breathable</li>
+                        <li>Machine Washable</li>
+                        <li>Eco-friendly</li>
+                        <li>Available in 5 colors</li>
+                    </ul>
+
+                    <h4>Specifications:</h4>
+                    <table class="spec-table">
+                        <tr>
+                            <td><strong>Material:</strong></td>
+                            <td>100% Cotton</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Weight:</strong></td>
+                            <td>180g</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fit:</strong></td>
+                            <td>Regular</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Care:</strong></td>
+                            <td>Machine Wash 30°C</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Right: Similar Products -->
+            <div class="product-sidebar">
+                <div class="seller-info">
+                    <h3>Seller</h3>
+                    <div class="seller-card">
+                        <div class="seller-avatar"></div>
+                        <div>
+                            <p class="seller-name">Premium Store</p>
+                            <p class="seller-rating">⭐ 4.8 rating</p>
+                        </div>
+                    </div>
+                    <button class="btn-contact-seller">Contact Seller</button>
+                </div>
+
+                <hr>
+
+                <div class="similar-products">
+                    <h3>Similar Products</h3>
+                    <div class="similar-item">
+                        <img src="assets/shirt.png" alt="">
+                        <p>Blue Casual T-Shirt</p>
+                        <strong>$22.99</strong>
+                    </div>
+                    <div class="similar-item">
+                        <img src="assets/polo_shirt.png" alt="">
+                        <p>Cotton Polo Shirt</p>
+                        <strong>$28.99</strong>
+                    </div>
+                    <div class="similar-item">
+                        <img src="assets/shirt.png" alt="">
+                        <p>Printed T-Shirt</p>
+                        <strong>$24.99</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Products Section -->
+        <section class="related-products">
+            <h2>Related Products</h2>
+            <div class="related-grid">
+                <div class="related-item">
+                    <img src="assets/brownjaket.png" alt="">
+                    <p>Denim Jacket</p>
+                    <strong>$59.99</strong>
+                </div>
+                <div class="related-item">
+                    <img src="assets/jeans.png" alt="">
+                    <p>Casual Shorts</p>
+                    <strong>$34.99</strong>
+                </div>
+                <div class="related-item">
+                    <img src="https://via.placeholder.com/150x150" alt="">
+                    <p>Sports Cap</p>
+                    <strong>$19.99</strong>
+                </div>
+                <div class="related-item">
+                    <img src="assets/wallet.png" alt="">
+                    <p>Athletic Shoes</p>
+                    <strong>$89.99</strong>
+                </div>
+                <div class="related-item">
+                    <img src="assets/wintercoat.png" alt="">
+                    <p>Wool Sweater</p>
+                    <strong>$49.99</strong>
+                </div>
+                <div class="related-item">
+                    <img src="assets/shirt.png" alt="">
+                    <p>Formal Shirt</p>
+                    <strong>$44.99</strong>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<!-- CART PAGE -->
+<div id="cart-page" style="display: none;">
+    <div class="container cart-container">
+        <div style="margin-bottom: 20px;">
+            <button class="btn-back" onclick="goBackHome()" style="background: #0d6efd; color: white; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px;">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </button>
+        </div>
+
+        <h1 style="margin-bottom: 30px;">Shopping Cart</h1>
+
+        <div class="cart-content">
+            <div class="cart-items">
+                <div id="cart-items-container">
+                    <!-- Cart items will be rendered here -->
+                </div>
+            </div>
+
+            <div class="cart-sidebar">
+                <div id="cart-summary">
+                    <!-- Cart summary will be rendered here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="main-footer">
+    <div class="container footer-content">
+        <div class="footer-brand">
+            <div class="logo">Brand</div>
+            <p>Best information about the company <br> goes here but now its just dummy text.</p>
+            <div class="social-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+        <div class="footer-links">
+            <div><h4>About</h4><ul><li>About Us</li><li>Find store</li><li>Categories</li><li>Blogs</li></ul></div>
+            <div><h4>Partnership</h4><ul><li>About Us</li><li>Find store</li><li>Categories</li><li>Blogs</li></ul></div>
+            <div><h4>Information</h4><ul><li>Help Center</li><li>Money Refund</li><li>Shipping</li><li>Contact us</li></ul></div>
+            <div><h4>For users</h4><ul><li>Login</li><li>Register</li><li>Settings</li><li>My Orders</li></ul></div>
+        </div>
+        <div class="footer-app">
+            <h4>Get app</h4>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" width="120">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" width="120">
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>© 2025 Ecommerce. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
